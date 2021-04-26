@@ -3,6 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:5.0 as build-env
 WORKDIR /app
 # Copy .csproj and restore the nugts
 COPY *.csproj ./
+RUN dotnet restore
 # Copy everything else 
 COPY . ./
 RUN dotnet publish -c release -o /app/publish
@@ -12,4 +13,4 @@ FROM mcr.microsoft.com/dotnet/sdk:5.0
 WORKDIR /app
 COPY --from=build-env /app/publish .
 EXPOSE 80
-ENTRYPOINT [ "dotnet", "dotnet.dll" ]
+ENTRYPOINT ["dotnet", "dotnetmvc.dll"]
