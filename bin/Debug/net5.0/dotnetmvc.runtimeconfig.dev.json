@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/hiba/.dotnet/store/|arch|/|tfm|",
+      "/home/hiba/.nuget/packages"
+    ]
+  }
+}
